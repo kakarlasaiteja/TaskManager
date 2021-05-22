@@ -6,8 +6,8 @@ import * as actions from './actions'
 const loginRecord = Immutable.Record({
     isLoggedIn: false,
     username: null,
-    userNameField: null,
-    idField: null,
+    userNameField: '',
+    idField: '',
     userToken: null
 })
 
