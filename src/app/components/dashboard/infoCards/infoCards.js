@@ -11,7 +11,7 @@ import { changeNewTaskDialog } from "../../../../lib/store/tasks/actions";
 
 import './infoCards.css'
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const COLORS = ['#0071bc', '#e9eef7'];
 
 class Infocards extends Component {
   constructor(props) {
@@ -25,8 +25,8 @@ class Infocards extends Component {
     this.calculatePieChartData()
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if(prevProps !== this.props){
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props) {
       this.calculatePieChartData()
     }
   }
@@ -44,7 +44,7 @@ class Infocards extends Component {
           value: totalTasks - tasksCompleted
         }
       ]
-    }) 
+    })
   }
 
   handleNewTaskClick = () => {
@@ -61,7 +61,7 @@ class Infocards extends Component {
           <div className="card noTaskcard">
             <div className="cardContent">
               <div className="noTaskText">You have no task.</div>
-              <button className="newTaskButton"  onClick={() => this.handleNewTaskClick()}>+ New Task</button>
+              <button className="newTaskButton" onClick={() => this.handleNewTaskClick()}>+ New Task</button>
             </div>
           </div>}
         {totalTasks !== 0 &&
@@ -75,7 +75,7 @@ class Infocards extends Component {
             </div>
             <div className="card">
               <h3 className="cardHeading">Latest Created Tasks</h3>
-              <ul className="latestLastsList">
+              <ul className="latestTasksList">
                 {latestTasks && latestTasks.length > 0 &&
                   latestTasks.map(task =>
                   (
@@ -86,22 +86,22 @@ class Infocards extends Component {
               </ul>
             </div>
             <div className="card">
-                <PieChart className='pieChart' width={200} height={200}>
-                  <Tooltip />
-                  <Pie
-                    data={pieChartData}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                  >
-                    {pieChartData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                  </Pie>
-                </PieChart>
+              <PieChart className='pieChart' width={200} height={200}>
+                <Tooltip />
+                <Pie
+                  data={pieChartData}
+                  cx="50%"
+                  cy="50%"
+                  labelLine={false}
+                  outerRadius={80}
+                  fill="#8884d8"
+                  dataKey="value"
+                >
+                  {pieChartData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+              </PieChart>
             </div>
           </div>
         }

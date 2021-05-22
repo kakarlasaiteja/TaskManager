@@ -9,7 +9,9 @@ const taskRecord = Immutable.Record({
   totalTasks: 0,
   latestTasks: [],
   allTasks: [],
-  addTaskField: ''
+  addTaskField: '',
+  searchField: '',
+  displayedTasks: []
 })
 
 const initialState = new taskRecord()
@@ -26,8 +28,36 @@ function taskReducer(state = initialState, action) {
     }
     case actions.STORE_ALL_TASKS: {
       const allTasks = action.payload
+      let displayedTasks = []
+      if(state.searchField !== ''){
+        if(allTasks && allTasks.length > 0){
+          displayedTasks = allTasks.filter( task => {
+            return task.name.toLowerCase().indexOf(state.searchField.toLowerCase()) > -1
+          })
+        }
+      } else if(state.searchField  === ''){
+        displayedTasks = Object.assign([], action.payload)
+      }
       return state.merge({
-        allTasks: allTasks
+        allTasks: allTasks,
+        displayedTasks: displayedTasks
+      })
+    }
+    case actions.EDIT_SERACH_FIELD: {
+      const search = action.payload
+      let displayedTasks = []
+      if(search !== ''){
+        if(state.allTasks && state.allTasks.length > 0){
+          displayedTasks = state.allTasks.filter( task => {
+            return task.name.toLowerCase().indexOf(search.toLowerCase()) > -1
+          })
+        }
+      } else if(search === ''){
+        displayedTasks = Object.assign([], state.allTasks)
+      }
+      return state.merge({
+        searchField: search,
+        displayedTasks: displayedTasks
       })
     }
     case actions.CHANGE_NEW_TASK_DIALOG: {

@@ -7,6 +7,7 @@ export const EDIT_A_TASK = "EDIT_A_TASK"
 export const DELETE_A_TASK = "DELETE_A_TASK"
 export const CHANGE_NEW_TASK_DIALOG = "CHANGE_NEW_TASK_DIALOG"
 export const CHANGE_ADD_TASK_FIELD = "CHANGE_ADD_TASK_FIELD"
+export const EDIT_SERACH_FIELD = "EDIT_SERACH_FIELD"
 
 export const getDashboardData = () => ({
     type: GET_DASHBOARD_DATA
@@ -48,5 +49,10 @@ export const changeNewTaskDialog = (payload) => ({
 
 export const changeAddTaskField = (payload) => ({
     type: CHANGE_ADD_TASK_FIELD,
+    payload
+})
+
+export const editSearchField = (payload) => ({
+    type: EDIT_SERACH_FIELD,
     payload
 })

@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { changeNewTaskDialog, addATask, changeAddTaskField } from "../../../lib/store/tasks/actions";
+import { Input } from 'antd';
 
 import './newTask.css'
 
@@ -40,8 +41,8 @@ class NewTask extends Component {
     return (
       <div className={showHideClassName}>
         <section className="modal-main">
-            <h3>+ New Task</h3>
-            <input type="text" value={addTaskField} onChange = {this.handleTaskInput} placeholder="Task Name" size="30"/>
+            <h3 className="newTaskHeading">+ New Task</h3>
+            <Input className="taskInput" value={addTaskField} onChange = {this.handleTaskInput} placeholder="Task Name"></Input>
             <button className="newTaskButton" onClick={this.handleNewTaskClick}>+ New Task</button>
         </section>
       </div>

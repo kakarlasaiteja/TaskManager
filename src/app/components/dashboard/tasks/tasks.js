@@ -5,8 +5,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { changeNewTaskDialog, editATask, deleteATask } from "../../../../lib/store/tasks/actions";
-import { DeleteOutlined } from "@ant-design/icons"
+import { changeNewTaskDialog, editATask, deleteATask, editSearchField } from "../../../../lib/store/tasks/actions";
+import { DeleteOutlined, SearchOutlined } from "@ant-design/icons"
 import { Checkbox, Input } from 'antd';
 
 import './tasks.css'
@@ -34,8 +34,12 @@ class Tasks extends Component {
     this.props.deleteATask(id)
   }
 
+  handleSearch = (event) => {
+    this.props.editSearchField(event.target.value)
+  }
+
   render() {
-    let { allTasks, totalTasks } = this.props
+    let { allTasks, totalTasks, displayedTasks } = this.props
     return (
       <>
       {totalTasks !== 0 && 
@@ -45,14 +49,14 @@ class Tasks extends Component {
             <h3 className="tasksHeading">Tasks</h3>
           </div>
           <div className="searchAndNewTask">
-            <Input className="searchInput" placeholder="Search by task name"></Input>
+            <Input className="searchInput" onChange={this.handleSearch} placeholder="Search by task name"></Input>
             <button className="newTaskButton"  onClick={() => this.handleNewTaskClick()}>+ New Task</button>
           </div>
         </div>
         <div className="tasksList">
             {
-              allTasks && allTasks.length > 0 && 
-              allTasks.map((task, index) => (
+              displayedTasks && displayedTasks.length > 0 && 
+              displayedTasks.map((task, index) => (
                 <div key={task.name} className="eachTask">
                   <div>
                   <Checkbox class='eachTaskCheckbox' checked={task.completed} onChange={() => this.handleTaskEdit(allTasks.indexOf(task))}>{task.name}</Checkbox>
@@ -71,13 +75,15 @@ class Tasks extends Component {
 
 const mapStateToProps = state => ({
   allTasks: state.app.taskDetails.allTasks,
-  totalTasks: state.app.taskDetails.totalTasks
+  totalTasks: state.app.taskDetails.totalTasks,
+  displayedTasks: state.app.taskDetails.displayedTasks
 })
 
 const mapDispatchToProps = dispatch => ({
   changeNewTaskDialog: (payload) => dispatch(changeNewTaskDialog(payload)),
   editATask: (payload) => dispatch(editATask(payload)),
-  deleteATask: (payload) => dispatch(deleteATask(payload))
+  deleteATask: (payload) => dispatch(deleteATask(payload)),
+  editSearchField: (payload) => dispatch(editSearchField(payload))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tasks);
