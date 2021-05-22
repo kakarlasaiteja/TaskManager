@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { loginUser } from "../../../lib/store/login/actions";
+import styled from 'styled-components';
 
 import './Login.css'
 
@@ -46,9 +47,9 @@ class Login extends Component {
             </div>
           </div>
           <form className="login-form">
-            <input className="text" value={idField} onChange={this.handleIdChange}  placeholder="Id" />
-            <input className="password" value={userNameField} onChange={this.handleUserNameChange}  placeholder="Name" />
-            <button onClick={this.handleLogin}>Login</button>
+            <input className="text" value={idField} onChange={this.handleIdChange} placeholder="Id" />
+            <input className="password" value={userNameField} onChange={this.handleUserNameChange} placeholder="Name" />
+            <button id="loginButton" onClick={this.handleLogin}>Login</button>
           </form>
         </div>
       </div>
