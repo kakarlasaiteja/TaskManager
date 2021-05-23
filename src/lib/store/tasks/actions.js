@@ -4,10 +4,13 @@ export const GET_ALL_TASKS = "GET_ALL_TASKS"
 export const STORE_ALL_TASKS = "STORE_ALL_TASKS"
 export const ADD_A_TASK = "ADD_A_TASK"
 export const EDIT_A_TASK = "EDIT_A_TASK"
+export const EDIT_A_TASK_NAME = "EDIT_A_TASK_NAME"
+export const TASK_BEING_EDITED = "TASK_BEING_EDITED"
 export const DELETE_A_TASK = "DELETE_A_TASK"
 export const CHANGE_NEW_TASK_DIALOG = "CHANGE_NEW_TASK_DIALOG"
 export const CHANGE_ADD_TASK_FIELD = "CHANGE_ADD_TASK_FIELD"
 export const EDIT_SERACH_FIELD = "EDIT_SERACH_FIELD"
+export const CHANGE_NEW_EDIT_TASK_TEXT = "CHANGE_NEW_EDIT_TASK_TEXT"
 
 export const getDashboardData = () => ({
     type: GET_DASHBOARD_DATA
@@ -29,6 +32,16 @@ export const addATask = (payload) => ({
 
 export const editATask = (payload) => ({
     type: EDIT_A_TASK,
+    payload
+})
+
+export const editATaskName = (payload) => ({
+    type: EDIT_A_TASK_NAME,
+    payload
+})
+
+export const taskBeingEdited = (payload) => ({
+    type: TASK_BEING_EDITED,
     payload
 })
 
@@ -54,5 +67,10 @@ export const changeAddTaskField = (payload) => ({
 
 export const editSearchField = (payload) => ({
     type: EDIT_SERACH_FIELD,
+    payload
+})
+
+export const changeNewEditTaskText = (payload) => ({
+    type: CHANGE_NEW_EDIT_TASK_TEXT,
     payload
 })

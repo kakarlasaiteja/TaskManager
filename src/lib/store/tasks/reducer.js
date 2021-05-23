@@ -11,7 +11,9 @@ const taskRecord = Immutable.Record({
   allTasks: [],
   addTaskField: '',
   searchField: '',
-  displayedTasks: []
+  displayedTasks: [],
+  neweditTaskText: "+ New Task",
+  taskBeingEdited: null
 })
 
 const initialState = new taskRecord()
@@ -70,6 +72,18 @@ function taskReducer(state = initialState, action) {
       const addTaskField = action.payload
       return state.merge({
         addTaskField: addTaskField
+      })
+    }
+    case actions.CHANGE_NEW_EDIT_TASK_TEXT: {
+      const name = action.payload
+      return state.merge({
+        neweditTaskText: name
+      })
+    }
+    case actions.TASK_BEING_EDITED: {
+      const task = action.payload
+      return state.merge({
+        taskBeingEdited: task
       })
     }
     default:

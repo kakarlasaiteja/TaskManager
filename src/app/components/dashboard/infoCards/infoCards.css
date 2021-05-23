@@ -85,6 +85,11 @@
     word-wrap: break-word;
 }
 
+.completed {
+    text-decoration: line-through;
+    text-decoration-thickness: 3px;
+}
+
 .pieChart {
     margin-left: 20%
 }
