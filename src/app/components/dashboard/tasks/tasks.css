@@ -74,6 +74,10 @@ button {
   font-size: 25px;
 }
 
+.lastTask {
+  border-bottom: none;
+}
+
 .ant-checkbox-wrapper span {
   font-size: 25px;
   color: #0071bc;

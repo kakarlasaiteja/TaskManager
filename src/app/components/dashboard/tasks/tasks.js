@@ -57,7 +57,7 @@ class Tasks extends Component {
             {
               displayedTasks && displayedTasks.length > 0 && 
               displayedTasks.map((task, index) => (
-                <div key={task.name} className="eachTask">
+                <div key={task.name} className={displayedTasks.indexOf(task) === displayedTasks.length - 1 ? "eachTask lastTask" : "eachTask"}>
                   <div className={task.completed ? "completedTask" : ""}>
                   <Checkbox checked={task.completed} onChange={() => this.handleTaskEdit(allTasks.indexOf(task))}>{task.name}</Checkbox>
                   </div>
