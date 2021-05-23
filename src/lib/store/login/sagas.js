@@ -30,9 +30,10 @@ export const loginUser = function* () {
         let api = "https://dev-dl.tdcx.com:3092/login"
         try {
             const results = yield call(postData, api, userObject, {headers: headers})
-            if (results.token && results.token.name && results.token.token) {
+            if (results.token && results.token.name && results.token.token && results.image) {
                 yield put(actions.loggedInUser(results.token.name))
                 yield put(actions.loggedInUserToken(results.token.token))
+                yield put(actions.updateImageUrl("https://dev-dl.tdcx.com:3092" + results.image))
             }
             if(results.msg && results.msg === "User logged in successfully"){
                 yield put(actions.loginSuccess())
