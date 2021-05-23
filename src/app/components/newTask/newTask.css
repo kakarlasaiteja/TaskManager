@@ -1,71 +1,71 @@
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 100;
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+  }
+  
+  .modal-main {
+    position:fixed;
+    background: white;
+    width: 25%;
+    height: auto;
+    top:50%;
+    left:50%;
+    padding: 30px;
+    border-radius: 15px;
+    transform: translate(-50%,-50%);
+  }
+  
+  .display-block {
+    display: block;
+  }
+  
+  .display-none {
+    display: none;
+  }
 
-.modal-main {
-  position: fixed;
-  background: white;
-  width: 25%;
-  height: auto;
-  top: 50%;
-  left: 50%;
-  padding: 30px;
-  border-radius: 15px;
-  transform: translate(-50%, -50%);
-}
-
-.display-block {
-  display: block;
-}
-
-.display-none {
-  display: none;
-}
-
-button {
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  outline: none;
-  font-weight: 500;
+  button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-weight: 500;
 }
 
 .newTaskButton {
-  outline: 0;
-  background-color: #0071bc;
-  width: 100%;
-  border: 0;
-  padding: 15px 20px;
-  color: #FFFFFF;
-  font-size: 20px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-  border-radius: 15px;
-}
-
-.taskInput {
-  width: 100%;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 15px;
-}
-
-@media screen and (max-width: 620px) {
-  .modal-main {
-    width: 80%;
+    outline: 0;
+    background-color: #0071bc ;
+    width: 100%;
+    border: 0;
+    padding: 15px 20px;
+    color: #FFFFFF;
+    font-size: 20px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 15px;
   }
-}
 
-.newTaskHeading {
-  font-weight: 700;
-  color: lightslategray;
-}
+  .taskInput {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 15px;
+  }
+
+  @media screen and (max-width: 620px) {
+    .modal-main {
+      width: 80%;
+    }
+  }
+
+  .newTaskHeading{
+    font-weight: 700;
+    color: lightslategray;
+  }

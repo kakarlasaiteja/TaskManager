@@ -1,18 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-.login-page {
+
+.login-page {  
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
 }
-
-.login-page .form .login {
-  text-align: center;
-  margin-top: -26px;
-  margin-bottom: 26px;
+.login-page .form .login{
+text-align: center;
+margin-top: -26px;
+margin-bottom: 26px;
 }
-
 .form {
-  display: block;
+ display: block;
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -23,7 +22,6 @@
   border-radius: 5%;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-
 .form input {
   font-family: "Roboto", sans-serif;
   outline: 0;
@@ -36,12 +34,11 @@
   font-size: 14px;
   border-radius: 15px;
 }
-
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background-color: #0071bc;
+  background-color: #0071bc ;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -52,13 +49,11 @@
   cursor: pointer;
   border-radius: 15px;
 }
-
 .form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
   font-size: 12px;
 }
-
 .form .message a {
   color: #4CAF50;
   text-decoration: none;
@@ -71,15 +66,15 @@
   margin: 0 auto;
 }
 
-.login-header {
-  text-align: left;
+.login-header{
+    text-align: left;
 }
 
-.login-header h3 {
-  font-weight: 400;
-  color: gray;
-  font-family: Arial, sans-serif;
-  font-size: x-large;
+.login-header h3{
+    font-weight: 400;
+    color: gray;
+    font-family: Arial, sans-serif;
+    font-size: x-large;
 }
 
 body {
