@@ -9,6 +9,22 @@ import styled from 'styled-components';
 
 import './Login.css'
 
+const StyledButton = styled.button`
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #0071bc ;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 15px;
+`;
+
 class Login extends Component {
   constructor(props) {
     super(props)
@@ -49,7 +65,7 @@ class Login extends Component {
           <form className="login-form">
             <input className="text" value={idField} onChange={this.handleIdChange} placeholder="Id" />
             <input className="password" value={userNameField} onChange={this.handleUserNameChange} placeholder="Name" />
-            <button id="loginButton" onClick={this.handleLogin}>Login</button>
+            <StyledButton id="loginButton" onClick={this.handleLogin}>Login</StyledButton>
           </form>
         </div>
       </div>
