@@ -1,30 +1,30 @@
-.tasksList{
-    display: block;
-    position: relative;
-    background: #FFFFFF;
-    max-width: 75%;
-    margin: 0 auto 100px;
-    padding: 45px;
-    text-align: left;
-    border-radius: 2%;
-    box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.15);
-    box-sizing: border-box;
-    min-width: 25%;
+.tasksList {
+  display: block;
+  position: relative;
+  background: #FFFFFF;
+  max-width: 75%;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: left;
+  border-radius: 2%;
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  min-width: 25%;
 }
 
 button {
-    background-color: Transparent;
-    background-repeat:no-repeat;
-    border: none;
-    cursor:pointer;
-    overflow: hidden;
-    outline:none;
-    font-weight: 500;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  font-weight: 500;
 }
 
 .newTaskButton {
   outline: 0;
-  background-color: #0071bc ;
+  background-color: #0071bc;
   width: 100%;
   border: 0;
   padding: 15px 20px;
@@ -34,77 +34,83 @@ button {
   transition: all 0.3 ease;
   cursor: pointer;
   border-radius: 15px;
-  }
+}
 
-  .tasksHeading{
-    font-weight: 700;
-    color: lightslategray;
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: x-large;
-  }
+.tasksHeading {
+  font-weight: 700;
+  color: lightslategray;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: x-large;
+}
 
+.tasksHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 12.5%;
+  margin-bottom: 20px;
+}
+
+.searchAndNewTask {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchAndNewTask .searchInput {
+  width: 100%;
+  padding: 15px;
+  margin: 0 20px;
+  border-radius: 15px;
+}
+
+.eachTask {
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 0px;
+  font-size: 25px;
+}
+
+.ant-checkbox-wrapper span {
+  font-size: 25px;
+  color: #0071bc;
+  font-weight: 400;
+  padding: 5px;
+}
+
+.completedTask .ant-checkbox-wrapper span {
+  text-decoration: line-through;
+  text-decoration-thickness: 3px;
+  text-decoration-color: lightslategray;
+  color: lightslategray;
+}
+
+.anticon svg {
+  color: lightslategray;
+}
+
+@media screen and (max-width: 620px) {
   .tasksHeader {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 0 12.5%;
-      margin-bottom: 20px;
+    flex-direction: column;
   }
-
   .searchAndNewTask {
-      display: flex;
-      flex-direction: row;
+    flex-direction: column;
   }
-
+  .newTaskButton {
+    padding: 15px 0px;
+    margin: 20px 0 0 0;
+  }
   .searchAndNewTask .searchInput {
-    width: 100%;
-    padding: 15px;
-    margin: 0 20px;
-    border-radius: 15px;
+    margin: 0;
   }
-
-  .eachTask {
-    border-bottom: 1px solid lightgrey;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 10px 0px;
-    font-size: 25px;
+  .tasksHeading {
+    text-align: center;
+    margin-left: 0;
   }
-
-  .ant-checkbox-wrapper span{
-      font-size: 25px;
-      color: #0071bc;
-      font-weight: 400;
-      padding: 5px;
+  .tasksList {
+    max-width: 100%;
   }
-
-  @media screen and (max-width: 620px) {
-    .tasksHeader {
-      flex-direction: column;
-    }
-
-    .searchAndNewTask {
-      flex-direction: column;
-    }
-
-    .newTaskButton{
-      padding: 15px 0px;
-      margin: 20px 0 0 0;
-    }
-
-    .searchAndNewTask .searchInput{
-      margin: 0;
-    }
-
-    .tasksHeading {
-      text-align: center;
-      margin-left: 0;
-    }
-
-    .tasksList {
-      max-width: 100%;
-    }
-  }
+}

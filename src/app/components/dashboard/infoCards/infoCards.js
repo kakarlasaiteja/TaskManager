@@ -79,7 +79,7 @@ class Infocards extends Component {
                 {latestTasks && latestTasks.length > 0 &&
                   latestTasks.map(task =>
                   (
-                    <li key={task.name} className="taskInList">{task["name"]}</li>
+                    <li key={task.name} className={task.completed ? "taskInList completed" : "taskInList"}>{task["name"]}</li>
                   )
                   )
                 }
