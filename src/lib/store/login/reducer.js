@@ -6,8 +6,6 @@ import * as actions from './actions'
 const loginRecord = Immutable.Record({
     isLoggedIn: false,
     username: null,
-    userNameField: '',
-    idField: '',
     userToken: null,
     imageURL: ''
 })
@@ -29,14 +27,6 @@ function loginReducer(state = initialState, action){
         }
         case "LOGOUT_USER": {
             return state.merge({ isLoggedIn: false, userNameField: null, idField: null,  userToken: null})
-        }
-        case "CHANGE_ID_FIELD": {
-            const id = action.payload
-            return state.merge({ idField: id})
-        }
-        case "CHANGE_USERNAME_FIELD": {
-            const userNameField = action.payload
-            return state.merge({ userNameField: userNameField})
         }
         case "UPDATE_IMAGE_URL": {
             const imageUrl = action.payload

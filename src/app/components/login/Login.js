@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable no-unused-vars */
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { connect } from 'react-redux'
 
 import { loginUser } from "../../../lib/store/login/actions";
@@ -25,63 +25,39 @@ const StyledButton = styled.button`
   border-radius: 15px;
 `;
 
-class Login extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    }
-  }
+function Login({login}) {
+  const [idField, setIdField] = useState('');
+  const [userNameField, setUserNameField] = useState('');
 
-  componentDidMount() {
-  }
-
-  handleLogin = (event) => {
-    let userObject = {
-      username: this.props.userNameField,
-      apiKey: this.props.idField
-    }
-    this.props.login(userObject)
+  const handleLogin = (event) => {
     event.preventDefault()
+    let userObject = {
+      username: userNameField,
+      apiKey: idField
+    }
+    login(userObject)
   }
 
-  handleIdChange = (event) => {
-    this.props.changeIdField(event.target.value)
-  }
-
-  handleUserNameChange = (event) => {
-    this.props.changeuserNameField(event.target.value)
-  }
-
-  render() {
-    let { userNameField, idField } = this.props
-    return (
-      <div className="login-page">
-        <div className="form">
-          <div className="login">
-            <div className="login-header">
-              <h3>Login</h3>
-            </div>
-          </div>
-          <form className="login-form">
-            <input className="text" value={idField} onChange={this.handleIdChange} placeholder="Id" />
-            <input className="password" value={userNameField} onChange={this.handleUserNameChange} placeholder="Name" />
-            <StyledButton id="loginButton" onClick={this.handleLogin}>Login</StyledButton>
-          </form>
+  return (
+    <div className="login-page">
+    <div className="form">
+      <div className="login">
+        <div className="login-header">
+          <h3>Login</h3>
         </div>
       </div>
-    )
-  }
+      <form className="login-form">
+        <input className="text" value={idField} onChange={(e) => setIdField(e.target.value)} placeholder="Id" />
+        <input className="password" value={userNameField} onChange={(e) => setUserNameField(e.target.value)} placeholder="Name" />
+        <StyledButton id="loginButton" onClick={handleLogin}>Login</StyledButton>
+      </form>
+    </div>
+  </div>
+  );
 }
 
-const mapStateToProps = state => ({
-  userNameField: state.app.loginDetails.userNameField,
-  idField: state.app.loginDetails.idField
-})
-
 const mapDispatchToProps = dispatch => ({
-  login: (payload) => dispatch(loginUser(payload)),
-  changeIdField: (payload) => dispatch({ type: "CHANGE_ID_FIELD", payload }),
-  changeuserNameField: (payload) => dispatch({ type: "CHANGE_USERNAME_FIELD", payload })
+  login: (payload) => dispatch(loginUser(payload))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(null, mapDispatchToProps)(Login);
