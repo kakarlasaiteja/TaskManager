@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import { changeNewTaskDialog, editATask, deleteATask, editSearchField, changeNewEditTaskText, taskBeingEdited } from "../../../../lib/store/tasks/actions";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons"
+import { DeleteOutlined, EditOutlined, SearchOutlined } from "@ant-design/icons"
 import { Checkbox, Input } from 'antd';
 
 import './tasks.css'
@@ -57,7 +57,7 @@ class Tasks extends Component {
                 <h3 className="tasksHeading">Tasks</h3>
               </div>
               <div className="searchAndNewTask">
-                <Input className="searchInput" onChange={this.handleSearch} placeholder="Search by task name"></Input>
+                <Input prefix={<SearchOutlined className="site-form-item-icon" />} className="searchInput" onChange={this.handleSearch} placeholder="Search by task name"></Input>
                 <button className="newTaskButton" onClick={() => this.handleNewTaskClick()}>+ New Task</button>
               </div>
             </div>

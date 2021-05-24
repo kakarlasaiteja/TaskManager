@@ -11,7 +11,7 @@ import { changeNewTaskDialog } from "../../../../lib/store/tasks/actions";
 
 import './infoCards.css'
 
-const COLORS = ['#0071bc', '#e9eef7'];
+const COLORS = ['#5484ec', '#e9eef7'];
 
 class Infocards extends Component {
   constructor(props) {
