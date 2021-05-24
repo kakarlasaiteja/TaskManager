@@ -1,7 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {  
-  width: 360px;
+  width: 30%;
+  
   padding: 8% 0 0;
   margin: auto;
 }
@@ -64,8 +65,14 @@ margin-bottom: 26px;
 }
 
 body {
-  background-color: #cbd3d2;
+  background-color: #f4f4f4;
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media screen and (max-width: 620px) {
+  .login-page {
+    width: 95%;
+  }
 }

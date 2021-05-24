@@ -23,7 +23,7 @@
 
 .newTaskButton {
   outline: 0;
-  background-color: #0071bc ;
+  background-color: #5484ec ;
   width: 100%;
   border: 0;
   padding: 15px 20px;
@@ -37,7 +37,7 @@
 
 .noTaskText {
     font-size: 30px;
-    color: #0071bc;
+    color: #5484ec;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -63,7 +63,7 @@
 
 .tasksCompleted {
     font-size: 100px;
-    color: #0071bc;
+    color: #5484ec;
     font-weight: 400;
 }
 

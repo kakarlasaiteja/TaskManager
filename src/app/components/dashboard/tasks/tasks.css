@@ -24,11 +24,11 @@ button {
 
 .newTaskButton {
   outline: 0;
-  background-color: #0071bc;
+  background-color: #5484ec;
   width: 100%;
   border: 0;
   padding: 15px 20px;
-  color: #FFFFFF;
+  color: #d8e3f9;
   font-size: 20px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
@@ -81,7 +81,7 @@ button {
 
 .ant-checkbox-wrapper span {
   font-size: 25px;
-  color: #0071bc;
+  color: #5484ec;
   font-weight: 400;
   padding: 5px;
 }

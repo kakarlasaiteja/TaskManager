@@ -13,11 +13,11 @@ const StyledButton = styled.button`
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background-color: #0071bc ;
+  background-color: #5484ec ;
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #FFFFFF;
+  color: #d8e3f9;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
