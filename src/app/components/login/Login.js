@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import './Login.css'
 
 const StyledButton = styled.button`
-  font-family: "Roboto", sans-serif;
+  font-family: "Trueno",  "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
   background-color: #5484ec ;
